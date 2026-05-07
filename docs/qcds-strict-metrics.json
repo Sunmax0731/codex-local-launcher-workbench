@@ -191,7 +191,7 @@
           "description": "docs ZIPが生成済みである",
           "kind": "zip",
           "pass": true,
-          "detail": "codex-local-launcher-workbench-docs.zip 9978 bytes"
+          "detail": "codex-local-launcher-workbench-docs.zip exists and exceeds minimum size"
         }
       ]
     },
