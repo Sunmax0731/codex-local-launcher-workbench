@@ -5,7 +5,7 @@
   "type": "module",
   "description": "ローカル作業の開始コマンド、環境プロファイル、事前確認をまとめる。",
   "scripts": {
-    "test": "node --test tests/*.test.mjs",
+    "test": "node --test tests/*.test.mjs && node tools/qcds-evaluate.mjs",
     "validate": "npm test",
     "start": "node src/cli.mjs samples/sample-input.json dist/run"
   },
