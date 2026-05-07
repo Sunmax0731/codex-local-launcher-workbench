@@ -2,13 +2,13 @@
   "items": [
     {
       "id": "codex-local-launcher-workbench-1",
-      "title": "作業開始・ローカルランチャー・Codex作業台 サンプル 1",
+      "title": "Codexローカルランチャーワークベンチ サンプル1",
       "status": "ready",
       "workspace": "D:\\AI\\WindowsApp\\codex-local-launcher-workbench",
       "command": "codex run --dry-run",
       "envProfile": "local",
       "preflight": [
-        "git clean",
+        "git status",
         "dependency check"
       ]
     },
@@ -19,7 +19,7 @@
       "command": "codex run --dry-run",
       "envProfile": "local",
       "preflight": [
-        "git clean",
+        "git status",
         "dependency check"
       ]
     }

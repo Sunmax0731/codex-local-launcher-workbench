@@ -1,7 +1,7 @@
 export const productConfig = {
   "repo": "codex-local-launcher-workbench",
-  "titleJa": "作業開始・ローカルランチャー・Codex作業台",
-  "summary": "ローカル作業開始のハブ化",
+  "titleJa": "Codexローカルランチャーワークベンチ",
+  "summary": "ローカルワークスペース、起動コマンド、環境プロファイル、事前チェックをまとめる。",
   "requiredFields": [
     "workspace",
     "command",
