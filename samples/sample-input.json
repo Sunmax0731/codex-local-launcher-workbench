@@ -1,0 +1,25 @@
+{
+  "items": [
+    {
+      "id": "launcher-1",
+      "title": "作業開始・ローカルランチャー・Codex作業台 サンプル 1",
+      "workspace": "D:\\AI\\WindowsApp\\codex-local-launcher-workbench",
+      "command": "codex run --dry-run",
+      "envProfile": "local",
+      "preflight": [
+        "git clean",
+        "dependency check"
+      ]
+    },
+    {
+      "id": "launcher-missing-required",
+      "title": "必須項目不足サンプル",
+      "command": "codex run --dry-run",
+      "envProfile": "local",
+      "preflight": [
+        "git clean",
+        "dependency check"
+      ]
+    }
+  ]
+}
