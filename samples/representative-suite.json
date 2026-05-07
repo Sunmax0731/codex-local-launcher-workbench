@@ -1,0 +1,138 @@
+{
+  "product": "codex-local-launcher-workbench",
+  "title": "Codexローカルランチャーワークベンチ",
+  "benchmarkRepos": [
+    "Sunmax0731/movie-telop-transcriber",
+    "Sunmax0731/codex-remote-android"
+  ],
+  "requiredFields": [
+    "workspace",
+    "command",
+    "envProfile",
+    "preflight"
+  ],
+  "scenarios": [
+    {
+      "id": "happy-path",
+      "purpose": "ローカルワークスペース、起動コマンド、環境プロファイル、事前チェックの正常入力を確認する",
+      "input": {
+        "items": [
+          {
+            "id": "codex-local-launcher-workbench-happy",
+            "title": "Codexローカルランチャーワークベンチ happy",
+            "workspace": "D:\\AI\\WindowsApp\\codex-local-launcher-workbench",
+            "command": "codex run --dry-run",
+            "envProfile": "local",
+            "preflight": [
+              "git status",
+              "dependency check"
+            ],
+            "status": "ready"
+          }
+        ]
+      },
+      "expected": {
+        "result": "passed",
+        "errors": 0,
+        "warnings": 0
+      }
+    },
+    {
+      "id": "missing-required",
+      "purpose": "必須項目不足をerrorとして検出する",
+      "input": {
+        "items": [
+          {
+            "id": "codex-local-launcher-workbench-missing-required",
+            "title": "Codexローカルランチャーワークベンチ missing-required",
+            "command": "codex run --dry-run",
+            "envProfile": "local",
+            "preflight": [
+              "git status",
+              "dependency check"
+            ],
+            "status": "ready"
+          }
+        ]
+      },
+      "expected": {
+        "result": "failed",
+        "errors": 1,
+        "warnings": 0
+      }
+    },
+    {
+      "id": "blocked-status",
+      "purpose": "blocked状態をwarningとして検出する",
+      "input": {
+        "items": [
+          {
+            "id": "codex-local-launcher-workbench-blocked",
+            "title": "Codexローカルランチャーワークベンチ blocked",
+            "workspace": "D:\\AI\\WindowsApp\\codex-local-launcher-workbench",
+            "command": "codex run --dry-run",
+            "envProfile": "local",
+            "preflight": [
+              "git status",
+              "dependency check"
+            ],
+            "status": "blocked"
+          }
+        ]
+      },
+      "expected": {
+        "result": "warning",
+        "errors": 0,
+        "warnings": 1
+      }
+    },
+    {
+      "id": "mixed-batch",
+      "purpose": "正常、必須不足、警告を同一バッチで集計する",
+      "input": {
+        "items": [
+          {
+            "id": "codex-local-launcher-workbench-happy",
+            "title": "Codexローカルランチャーワークベンチ happy",
+            "workspace": "D:\\AI\\WindowsApp\\codex-local-launcher-workbench",
+            "command": "codex run --dry-run",
+            "envProfile": "local",
+            "preflight": [
+              "git status",
+              "dependency check"
+            ],
+            "status": "ready"
+          },
+          {
+            "id": "codex-local-launcher-workbench-missing-required",
+            "title": "Codexローカルランチャーワークベンチ missing-required",
+            "command": "codex run --dry-run",
+            "envProfile": "local",
+            "preflight": [
+              "git status",
+              "dependency check"
+            ],
+            "status": "ready"
+          },
+          {
+            "id": "codex-local-launcher-workbench-blocked",
+            "title": "Codexローカルランチャーワークベンチ blocked",
+            "workspace": "D:\\AI\\WindowsApp\\codex-local-launcher-workbench",
+            "command": "codex run --dry-run",
+            "envProfile": "local",
+            "preflight": [
+              "git status",
+              "dependency check"
+            ],
+            "status": "blocked"
+          }
+        ]
+      },
+      "expected": {
+        "result": "failed",
+        "errors": 1,
+        "warnings": 1
+      }
+    }
+  ]
+}
