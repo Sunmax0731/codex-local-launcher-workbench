@@ -1,0 +1,8 @@
+{
+  "product": "codex-local-launcher-workbench",
+  "platformType": "windows-local-app",
+  "pass": true,
+  "method": "runtime-gate",
+  "manualTest": "not-run-by-codex",
+  "packageTest": true
+}
