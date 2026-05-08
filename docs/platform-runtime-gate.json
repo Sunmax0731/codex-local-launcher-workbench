@@ -1,0 +1,11 @@
+{
+  "product": "codex-local-launcher-workbench",
+  "title": "作業開始・ローカルランチャー・Codex作業台",
+  "domain": "WindowsApp",
+  "ideaNo": 1,
+  "platformType": "windows-local-app",
+  "expectedPublicTarget": "GitHub Release / BOOTH",
+  "browser": null,
+  "android": null,
+  "evidence": "dist/platform-runtime-gate-result.json"
+}
